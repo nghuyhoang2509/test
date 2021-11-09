@@ -183,6 +183,7 @@ D. Memo
         }
         const btn = document.querySelector(".button")
         Object.keys(obj).map((item) => {
+            console.log(item)
             if (item.length > 0){
                 btn.innerHTML += `<button class="btnChar" onclick="search(this)">${item}</button>`
             }
