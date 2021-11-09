@@ -183,7 +183,9 @@ D. Memo
         }
         const btn = document.querySelector(".button")
         Object.keys(obj).map((item) => {
-            btn.innerHTML += `<button class="btnChar" onclick="search(this)">${item}</button>`
+            if (item.length > 0){
+                btn.innerHTML += `<button class="btnChar" onclick="search(this)">${item}</button>`
+            }
         })
         function search(e) {
             window.scrollTo(0,0)
