@@ -359,12 +359,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
 	    function hiddenQuestion(char,indexchar,e){
 		    e.target.parentElement.classList.add("d-none")
 		    console.log(e)
-		    let objsplice = obj[char].map((item,index)=> {
-			    if (index === indexchar){
-				    return item
-			    }
-		    })
-		    obj[e.target.char] = objsplice
+		    obj[e.char] = [...obj[e.char].slice(0,indexchar),...obj[e.char].slice(indexchar+1,obj[e.char].length)]
 	    }
     </script>
 
