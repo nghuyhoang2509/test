@@ -337,8 +337,8 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
             obj[e.innerText].forEach((item, index) => {
                 if (index === 0) {
                     list.innerHTML = `
-                        <li char="${e.innerText}" index="${index}" class="question">
-				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
+                        <li class="question">
+				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(e.innerText,index,event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
@@ -346,8 +346,8 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                         </li>`
                 } else {
                     list.innerHTML += `
-                        <li char="${e.innerText}" index="${index}" class="question">
-				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
+                        <li class="question">
+				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(e.innerText,index,event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
@@ -356,11 +356,11 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                 }
             })
         }
-	    function hiddenQuestion(e){
+	    function hiddenQuestion(char,indexchar,e){
 		    e.target.parentElement.classList.add("d-none")
 		    console.log(e)
-		    let objsplice = obj[e.target.char].map((item,index)=> {
-			    if (index.toString() === e.target.index){
+		    let objsplice = obj[char].map((item,index)=> {
+			    if (index === indexchar){
 				    return item
 			    }
 		    })
