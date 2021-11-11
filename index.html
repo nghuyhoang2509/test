@@ -337,7 +337,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
             obj[e.innerText].forEach((item, index) => {
                 if (index === 0) {
                     list.innerHTML = `
-                        <li char="`${e.innerText}`" index="`${index}`" class="question">
+                        <li char=`"${e.innerText}"` index=`"${index}"` class="question">
 				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
@@ -346,7 +346,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                         </li>`
                 } else {
                     list.innerHTML += `
-                        <li char="`${e.innerText}`" index="`${index}`" class="question">
+                        <li char=`"${e.innerText}"` index=`"${index}"` class="question">
 				<p class="class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
