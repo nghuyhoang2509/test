@@ -338,7 +338,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                 if (index === 0) {
                     list.innerHTML = `
                         <li class="question">
-				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion("${ed.innerText}",${index},event)">Ẩn</p>
+				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion('${ed.innerText}',${index},event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
@@ -347,7 +347,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                 } else {
                     list.innerHTML += `
                         <li class="question">
-				<p class="text-decoration-underline text-primary"  onclick="hiddenQuestion("${ed.innerText}",${index},event)">Ẩn</p>
+				<p class="text-decoration-underline text-primary"  onclick="hiddenQuestion('${ed.innerText}',${index},event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
