@@ -335,7 +335,8 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
         function search(ed) {
             window.scrollTo(0,0)
             obj[ed.innerText].forEach((item, index) => {
-		if(item){
+		    console.log(item)
+		if(item !==""){
 		if (index === 0) {
                     list.innerHTML = `
                         <li class="question">
@@ -362,6 +363,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
 	    function hiddenQuestion(char,indexchar,e){
 		    e.target.parentElement.classList.add("d-none")
 		    obj[char][indexchar]=""
+		    console.log(obj[char])
 	    }
     </script>
 
