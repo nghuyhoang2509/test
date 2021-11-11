@@ -332,13 +332,13 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                 btn.innerHTML += `<button class="btnChar" onclick="search(this)">${item}</button>`
             }
         })
-        function search(e) {
+        function search(ed) {
             window.scrollTo(0,0)
-            obj[e.innerText].forEach((item, index) => {
+            obj[ed.innerText].forEach((item, index) => {
                 if (index === 0) {
                     list.innerHTML = `
                         <li class="question">
-				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(e.innerText,index,event)">Ẩn</p>
+				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(${ed.innerText},${index},event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
@@ -347,7 +347,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                 } else {
                     list.innerHTML += `
                         <li class="question">
-				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(e.innerText,index,event)">Ẩn</p>
+				<p class="text-decoration-underline text-primary"  onclick="hiddenQuestion(${ed.innerText},${index},event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
