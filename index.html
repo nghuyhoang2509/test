@@ -347,7 +347,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
                 } else {
                     list.innerHTML += `
                         <li char="${e.innerText}" index="${index}" class="question">
-				<p class="class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
+				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
@@ -358,6 +358,7 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
         }
 	    function hiddenQuestion(e){
 		    e.target.parentElement.classList.add("d-none")
+		    console.log(e)
 		    let objsplice = obj[e.target.char].map((item,index)=> {
 			    if (index.toString() === e.target.index){
 				    return item
