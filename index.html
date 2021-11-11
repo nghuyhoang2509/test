@@ -280,7 +280,8 @@ Câu 48. A điều khiển ô tô trong tình trạng say rượu dẫn đến t
             obj[e.innerText].forEach((item, index) => {
                 if (index === 0) {
                     list.innerHTML = `
-                        <li>
+                        <li class="question">
+				<p onclick="hiddenQuestion(event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
@@ -288,8 +289,9 @@ Câu 48. A điều khiển ô tô trong tình trạng say rượu dẫn đến t
                         </li>`
                 } else {
                     list.innerHTML += `
-                        <li>
+                        <li class="question">
                             <h5>
+			    	<p onclick="hiddenQuestion(event)">Ẩn</p>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
                             </h5>
                             <p>${item.slice(item.search(/[abcdABCD][.]/), item.length)}</p>
@@ -297,6 +299,9 @@ Câu 48. A điều khiển ô tô trong tình trạng say rượu dẫn đến t
                 }
             })
         }
+	    function hiddenQuestion(e){
+		    console.log(e)
+	    }
     </script>
 
 
