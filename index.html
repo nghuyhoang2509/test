@@ -359,11 +359,8 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
 	    function hiddenQuestion(char,indexchar,e){
 		    e.target.parentElement.classList.add("d-none")
 		    console.log(e)
-		    obj[char] = obj[char].map((item,index)=>{
-			    if (index !== indexchar){
-				    return item
-			    }
-		    })
+		    obj[char] = obj[char].slice(0,indexchar).concat(obj[char].slice(indexchar+1,obj[char].length))
+		    console.log(obj[char])
 	    }
     </script>
 
