@@ -335,27 +335,31 @@ D. điều kiện, hoàn cảnh cụ thể của A và B.
         function search(ed) {
             window.scrollTo(0,0)
             obj[ed.innerText].forEach((item, index) => {
-		    console.log(item)
+		    
 		if(item !==""){
-		if (index === 0) {
-                    list.innerHTML = `
-                        <li class="question">
-				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion('${ed.innerText}',${index},event)">Ẩn</p>
-                            <h5>
-                                ${item.slice(0, item.search(/[abcdABCD][.]/))}
-                            </h5>
-                            <p>${item.slice(item.search(/[abcdABCD][.]/), item.length)}</p>
-                        </li>`
-                } else {
-                    list.innerHTML += `
-                        <li class="question">
-				<p class="text-decoration-underline text-primary"  onclick="hiddenQuestion('${ed.innerText}',${index},event)">Ẩn</p>
-                            <h5>
-                                ${item.slice(0, item.search(/[abcdABCD][.]/))}
-                            </h5>
-                            <p>${item.slice(item.search(/[abcdABCD][.]/), item.length)}</p>
-                        </li>`
-                }
+			if (index === 0) {
+                    		list.innerHTML = `
+                        		<li class="question">
+						<p class="text-decoration-underline text-primary" onclick="hiddenQuestion('${ed.innerText}',${index},event)">Ẩn</p>
+                           			 <h5>
+                               			 ${item.slice(0, item.search(/[abcdABCD][.]/))}
+                           			 </h5>
+                            			<p>${item.slice(item.search(/[abcdABCD][.]/), item.length)}</p>
+                        		</li>`
+                	} else {
+                    		list.innerHTML += `
+                        		<li class="question">
+						<p class="text-decoration-underline text-primary"  onclick="hiddenQuestion('${ed.innerText}',${index},event)">Ẩn</p>
+                           			 <h5>
+                                		${item.slice(0, item.search(/[abcdABCD][.]/))}
+                            			</h5>
+                           			 <p>${item.slice(item.search(/[abcdABCD][.]/), item.length)}</p>
+                        		</li>`
+               		 }
+		}else{
+			if (index === 0){
+				list.innerHTML = ``
+			}
 		}
                 
             })
