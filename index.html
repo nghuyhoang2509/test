@@ -280,7 +280,7 @@ Câu 48. A điều khiển ô tô trong tình trạng say rượu dẫn đến t
             obj[e.innerText].forEach((item, index) => {
                 if (index === 0) {
                     list.innerHTML = `
-                        <li class="question">
+                        <li char=`${e.innerText}` index=`${index}` class="question">
 				<p class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
@@ -289,7 +289,7 @@ Câu 48. A điều khiển ô tô trong tình trạng say rượu dẫn đến t
                         </li>`
                 } else {
                     list.innerHTML += `
-                        <li class="question">
+                        <li char=`${e.innerText}` index=`${index}` class="question">
 				<p class="class="text-decoration-underline text-primary" onclick="hiddenQuestion(event)">Ẩn</p>
                             <h5>
                                 ${item.slice(0, item.search(/[abcdABCD][.]/))}
@@ -301,6 +301,12 @@ Câu 48. A điều khiển ô tô trong tình trạng say rượu dẫn đến t
         }
 	    function hiddenQuestion(e){
 		    e.target.parentElement.classList.add("d-none")
+		    let objsplice = obj[e.target.char].map((item,index)=> {
+			    if (index.toString() === e.target.index){
+				    return item
+			    }
+		    })
+		    obj[e.target.char] = objsplice
 	    }
     </script>
 
