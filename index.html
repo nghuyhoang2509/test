@@ -165,7 +165,7 @@ D. Memo
             Y: []
         }
         const test = document.querySelector(".test")
-        const textTest = test.innerText
+        const textTest = test.innerHTML
         const textArray = textTest.split(/Câu \d+[:.] /)
         textArray.sort((a, b) => a.localeCompare(b))
         const list = document.querySelector(".listTest")
